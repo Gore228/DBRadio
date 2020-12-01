@@ -1,0 +1,69 @@
+﻿@page
+@model DBRadio.Pages.GrafikRabotiP.CreateModel
+
+@{
+    ViewData["Title"] = "Создать новую запись";
+}
+
+<h1>Создать новую запись</h1>
+
+<h4>График работы</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="GrafikRaboti.Date" class="control-label"></label>
+                <input asp-for="GrafikRaboti.Date" class="form-control" />
+                <span asp-validation-for="GrafikRaboti.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GrafikRaboti.StaffID" class="control-label"></label>
+                <input asp-for="GrafikRaboti.StaffID" class="form-control" />
+                <span asp-validation-for="GrafikRaboti.StaffID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GrafikRaboti.Time1" class="control-label"></label>
+                <input asp-for="GrafikRaboti.Time1" class="form-control" />
+                <span asp-validation-for="GrafikRaboti.Time1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GrafikRaboti.RecordID1" class="control-label"></label>
+                <input asp-for="GrafikRaboti.RecordID1" class="form-control" />
+                <span asp-validation-for="GrafikRaboti.RecordID1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GrafikRaboti.Time2" class="control-label"></label>
+                <input asp-for="GrafikRaboti.Time2" class="form-control" />
+                <span asp-validation-for="GrafikRaboti.Time2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GrafikRaboti.RecordID2" class="control-label"></label>
+                <input asp-for="GrafikRaboti.RecordID2" class="form-control" />
+                <span asp-validation-for="GrafikRaboti.RecordID2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GrafikRaboti.Time3" class="control-label"></label>
+                <input asp-for="GrafikRaboti.Time3" class="form-control" />
+                <span asp-validation-for="GrafikRaboti.Time3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GrafikRaboti.RecordID3" class="control-label"></label>
+                <input asp-for="GrafikRaboti.RecordID3" class="form-control" />
+                <span asp-validation-for="GrafikRaboti.RecordID3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Назад к таблице</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

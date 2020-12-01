@@ -1,0 +1,40 @@
+﻿@page
+@model DBRadio.Pages.IspolniteliP.DeleteModel
+
+@{
+    ViewData["Title"] = "Удалить";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы уверены?</h3>
+<div>
+    <h4>Исполнители</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ispolniteli.Perfomer_ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ispolniteli.Perfomer_ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ispolniteli.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ispolniteli.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ispolniteli.Discription)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ispolniteli.Discription)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Ispolniteli.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Назад к таблице</a>
+    </form>
+</div>

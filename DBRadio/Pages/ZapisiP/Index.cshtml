@@ -1,0 +1,102 @@
+﻿@page
+@model DBRadio.Pages.ZapisiP.IndexModel
+
+@{
+    ViewData["Title"] = "Таблица записей";
+}
+
+<h1>Таблица записей</h1>
+
+<p>
+    <a asp-page="Create">Создать новую запись</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Zapisi[0].Record_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Zapisi[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Zapisi[0].Perfomer_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Zapisi[0].Albom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Zapisi[0].Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Zapisi[0].Genre_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Zapisi[0].RecordDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Zapisi[0].Duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Zapisi[0].Rating)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Zapisi) {
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Record_ID)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Name)
+			</td>
+			<td>
+				@{
+					try
+					{
+						@Model.Ispolniteli.First(r => r.ID == item.PerformerID).Name
+					}
+					catch
+					{
+						<p> Данных нет </p>
+					}
+				}
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Albom)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Year)
+			</td>
+			<td>
+				@{
+					try
+					{
+						@Model.Zhanri.First(r => r.ID == item.GenreID).Name
+					}
+					catch
+					{
+						<p> Данных нет </p>
+					}
+				}
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.RecordDate)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Duration)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Rating)
+			</td>
+			<td>
+				<a asp-page="./Edit" asp-route-id="@item.ID">Редактировать</a> |
+				<a asp-page="./Details" asp-route-id="@item.ID">Подробнее</a> |
+				<a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+			</td>
+		</tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,70 @@
+﻿@page
+@model DBRadio.Pages.GrafikRabotiP.DeleteModel
+
+@{
+    ViewData["Title"] = "Удалить";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы уверены?</h3>
+<div>
+    <h4>График работы</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GrafikRaboti.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GrafikRaboti.Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GrafikRaboti.StaffID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GrafikRaboti.StaffID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GrafikRaboti.Time1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GrafikRaboti.Time1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GrafikRaboti.RecordID1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GrafikRaboti.RecordID1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GrafikRaboti.Time2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GrafikRaboti.Time2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GrafikRaboti.RecordID2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GrafikRaboti.RecordID2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GrafikRaboti.Time3)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GrafikRaboti.Time3)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GrafikRaboti.RecordID3)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GrafikRaboti.RecordID3)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="GrafikRaboti.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Назад к таблице</a>
+    </form>
+</div>

@@ -1,0 +1,73 @@
+﻿@page
+@model DBRadio.Pages.ZapisiP.DetailsModel
+
+@{
+    ViewData["Title"] = "Подробнее";
+}
+
+<h1>Подробнее</h1>
+
+<div>
+    <h4>Записи</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Zapisi.Record_ID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Zapisi.Record_ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Zapisi.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Zapisi.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Zapisi.PerformerID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Zapisi.PerformerID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Zapisi.Albom)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Zapisi.Albom)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Zapisi.Year)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Zapisi.Year)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Zapisi.GenreID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Zapisi.GenreID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Zapisi.RecordDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Zapisi.RecordDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Zapisi.Duration)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Zapisi.Duration)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Zapisi.Rating)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Zapisi.Rating)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Zapisi.ID">Редактировать</a> |
+    <a asp-page="./Index">Назад к таблице</a>
+</div>

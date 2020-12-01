@@ -1,0 +1,54 @@
+﻿@page
+@model DBRadio.Pages.DolzhnostiP.CreateModel
+
+@{
+    ViewData["Title"] = "Создать новую запись";
+}
+
+<h1>Создать новую запись</h1>
+
+<h4>Должности</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Dolzhnosti.Position_ID" class="control-label"></label>
+                <input asp-for="Dolzhnosti.Position_ID" class="form-control" />
+                <span asp-validation-for="Dolzhnosti.Position_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dolzhnosti.JobTitle" class="control-label"></label>
+                <input asp-for="Dolzhnosti.JobTitle" class="form-control" />
+                <span asp-validation-for="Dolzhnosti.JobTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dolzhnosti.Salary" class="control-label"></label>
+                <input asp-for="Dolzhnosti.Salary" class="form-control" />
+                <span asp-validation-for="Dolzhnosti.Salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dolzhnosti.Responsibilities" class="control-label"></label>
+                <input asp-for="Dolzhnosti.Responsibilities" class="form-control" />
+                <span asp-validation-for="Dolzhnosti.Responsibilities" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dolzhnosti.Demands" class="control-label"></label>
+                <input asp-for="Dolzhnosti.Demands" class="form-control" />
+                <span asp-validation-for="Dolzhnosti.Demands" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Назад к таблице</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

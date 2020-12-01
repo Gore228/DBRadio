@@ -1,0 +1,114 @@
+﻿@page
+@model DBRadio.Pages.GrafikRabotiP.IndexModel
+
+@{
+    ViewData["Title"] = "Таблица графиков работы";
+}
+
+<h1>Таблица графиков работы</h1>
+
+<p>
+    <a asp-page="Create">Создать новую запись</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GrafikRaboti[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrafikRaboti[0].Staff_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrafikRaboti[0].Time1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrafikRaboti[0].Record_ID1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrafikRaboti[0].Time2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrafikRaboti[0].Record_ID2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrafikRaboti[0].Time3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrafikRaboti[0].Record_ID3)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.GrafikRaboti) {
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Date)
+			</td>
+			<td>
+				@{
+					try
+					{
+						@Model.Dolzhnosti.First(r => r.ID == item.StaffID).JobTitle
+					}
+					catch
+					{
+						<p> Данных нет </p>
+					}
+				}
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Time1)
+			</td>
+			<td>
+				@{
+					try
+					{
+						@Model.Zapisi.First(r => r.ID == item.RecordID1).Name
+					}
+					catch
+					{
+						<p> Данных нет </p>
+					}
+				}
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Time2)
+			</td>
+			<td>
+				@{
+					try
+					{
+						@Model.Zapisi.First(r => r.ID == item.RecordID2).Name
+					}
+					catch
+					{
+						<p> Данных нет </p>
+					}
+				}
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Time3)
+			</td>
+			<td>
+				@{
+					try
+					{
+						@Model.Zapisi.First(r => r.ID == item.RecordID3).Name
+					}
+					catch
+					{
+						<p> Данных нет </p>
+					}
+				}
+			</td>
+			<td>
+				<a asp-page="./Edit" asp-route-id="@item.ID">Редактировать</a> |
+				<a asp-page="./Details" asp-route-id="@item.ID">Подробнее</a> |
+				<a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+			</td>
+		</tr>
+}
+    </tbody>
+</table>
