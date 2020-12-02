@@ -1,0 +1,46 @@
+﻿@page
+@model DBRadio.Pages.Zf.Filtri.SetkaVeshyaniyaDateF
+@{
+}
+
+<h1>Сетка вещания</h1>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.GrafikRaboti[0].Date)
+			</th>
+
+			<th>
+				@Html.DisplayNameFor(model => model.GrafikRaboti[0].RecordID1)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.GrafikRaboti[0].RecordID2)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.GrafikRaboti[0].RecordID3)
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.GrafikRaboti)
+		{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Date)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.RecordID1)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.RecordID2)
+			</td>
+
+			<td>
+				@Html.DisplayFor(modelItem => item.RecordID3)
+			</td>
+		</tr>
+		}
+	</tbody>
+</table>

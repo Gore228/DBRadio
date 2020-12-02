@@ -1,0 +1,80 @@
+﻿@page
+@model DBRadio.Pages.Zf.Zaprosi.SetkaVeshyaniya
+@{
+}
+<h1>Сетка вещания</h1>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.GrafikRaboti[0].Staff_ID)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.GrafikRaboti[0].Record_ID1)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.GrafikRaboti[0].Record_ID2)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.GrafikRaboti[0].Record_ID3)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.GrafikRaboti)
+		{
+			<tr>
+				<td>
+					@{
+						try
+						{
+							@Model.Sotrudniki.First(r => r.ID == item.StaffID).FullName
+						}
+						catch
+						{
+							<p> Данных нет </p>
+						}
+					}
+				</td>
+				<td>
+					@{
+						try
+						{
+							@Model.Zapisi.First(r => r.ID == item.RecordID1).Name
+						}
+						catch
+						{
+							<p> Данных нет </p>
+						}
+					}
+				</td>
+				<td>
+					@{
+						try
+						{
+							@Model.Zapisi.First(r => r.ID == item.RecordID2).Name
+						}
+						catch
+						{
+							<p> Данных нет </p>
+						}
+					}
+				</td>
+				<td>
+					@{
+						try
+						{
+							@Model.Zapisi.First(r => r.ID == item.RecordID3).Name
+						}
+						catch
+						{
+							<p> Данных нет </p>
+						}
+					}
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

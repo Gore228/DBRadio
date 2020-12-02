@@ -1,0 +1,33 @@
+﻿@page
+@model DBRadio.Pages.Zf.Filtri.MusicArchievZhanriF
+@{
+}
+
+<h1>Музыкальный архив</h1>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Zapisi[0].Record_ID)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Zapisi[0].Genre_ID)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.Zapisi)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Record_ID)
+				</td>
+				<td>
+					@Model.Zhanri.Name
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

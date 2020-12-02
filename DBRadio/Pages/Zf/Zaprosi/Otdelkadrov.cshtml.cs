@@ -1,33 +1,31 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using BDRadio.Models;
 using DBRadio.Data;
+using BDRadio.Models;
 
-namespace DBRadio.Pages.GrafikRabotiP
+namespace DBRadio.Pages.Zf.Zaprosi
 {
-    public class IndexModel : PageModel
+    public class Otdelkadrov : PageModel
     {
         private readonly DBRadio.Data.DBRadioContext _context;
 
-        public IndexModel(DBRadio.Data.DBRadioContext context)
+        public Otdelkadrov(DBRadio.Data.DBRadioContext context)
         {
             _context = context;
         }
 
-        public IList<GrafikRaboti> GrafikRaboti { get;set; }
         public IList<Sotrudniki> Sotrudniki { get; set; }
-        public IList<Zapisi> Zapisi { get; set; }
+        public IList<Dolzhnosti> Dolzhnosti { get; set; }
 
-            public async Task OnGetAsync()
+        public async Task OnGetAsync()
         {
-            GrafikRaboti = await _context.GrafikRaboti.ToListAsync();
             Sotrudniki = await _context.Sotrudniki.ToListAsync();
-            Zapisi = await _context.Zapisi.ToListAsync(); 
+            Dolzhnosti = await _context.Dolzhnosti.ToListAsync();
         }
     }
 }

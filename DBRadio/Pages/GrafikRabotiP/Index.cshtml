@@ -50,7 +50,7 @@
 				@{
 					try
 					{
-						@Model.Dolzhnosti.First(r => r.ID == item.StaffID).JobTitle
+						@Model.Sotrudniki.First(r => r.ID == item.StaffID).FullName
 					}
 					catch
 					{
